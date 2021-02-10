@@ -1,0 +1,11 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <img src="/assets/images/logo.jpg" width="150" height="150" class="figure-img img-fluid float-left">
+    <h2 class="display-4">Ven a disfrutar de nuestras actividades.</h2>
+  </div>
+</div>
+<div class="row">
+  <div *ngFor="let actividad of actividades" class="col-12 col-md-6  col-lg-4">
+    <app-actividad-item [actividad]="actividad"></app-actividad-item>
+  </div>
+</div>

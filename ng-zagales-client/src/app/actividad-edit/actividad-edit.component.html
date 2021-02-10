@@ -1,0 +1,78 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+  
+    <div class="card-body" *ngIf="ver">
+      <form novalidate
+            (ngSubmit)="saveactividad()"
+            [formGroup]="actividadForm">
+  
+            <div class="form-group row mb-2">
+              <label class="col-md-2 col-form-label"
+                     for="actividadNameId">Nombre</label>
+              <div class="col-md-8">
+                <input class="form-control"
+                       id="actividadNameId"
+                       type="text"
+                       placeholder="nombre (required)"
+                       formControlName="nombre"
+                       name="nombre" />
+              </div>
+            </div>
+      
+            <div class="form-group row mb-2">
+              <label class="col-md-2 col-form-label"
+                     for="destinoId">Destino</label>
+      
+              <div class="col-md-8">
+                <input class="form-control"
+                        id="destinoId"
+                        placeholder="destino"
+                        type="text"
+                        formControlName="destino"
+                        name="destino" />
+              </div>
+            </div>
+      
+            <div class="form-group row mb-2">
+              <label class="col-md-2 col-form-label"
+                     for="fechaPartidaId">Fecha de la actividad</label>
+      
+              <div class="col-md-8">
+                <input class="form-control"
+                        id="fechaPartidaId"
+                        placeholder="fecha partida"
+                        type="string"
+                        formControlName="fechaPartida"
+                        name="fechaPartida"/>
+              </div>
+            </div>        
+  
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button class="btn btn-primary mr-3"                    
+                    type="submit">
+              Save
+            </button>
+            <button class="btn btn-outline-secondary mr-3"                    
+                    type="button"
+                    title="Cancel your edits"
+                    [routerLink]="['']">
+              Cancel
+            </button>
+            <button class="btn btn-outline-warning"                  
+                    type="button"
+                    title="Delete this product"
+                    (click)="deleteactividad()">
+              Delete
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  
+    <div class="alert alert-danger"
+          *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>
